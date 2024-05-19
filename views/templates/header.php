@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="logo" width="60" height="60">
+                <img src="public/images/logo.png" alt="logo" width="60" height="60">
             </a>
             <a class="navbar-brand">Pokedex</a>
 
@@ -48,7 +48,6 @@
             ?>
         </div>
     </nav>
-
 
 
     <div class="container-fluid">
