@@ -4,15 +4,17 @@ class PokemonController
 {
 
     private $model;
+    private $presenter;
 
-    public function __construct($model)
+    public function __construct($model, $presenter)
     {
         $this->model = $model;
+        $this->presenter = $presenter;
     }
 
     public function listPokemon()
     {
         $pokemones = $this->model->getPokemones();
-        include_once("views/listar.php");
+        $this->presenter->render("views/listar.mustache", ["pokemones" => $pokemones]);
     }
 }

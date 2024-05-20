@@ -17,7 +17,7 @@ class Database
     public function query($sql)
     {
         $result = mysqli_query($this->conn, $sql);
-        return mysqli_fetch_all($result);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 
     public function __destruct()

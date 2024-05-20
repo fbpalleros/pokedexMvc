@@ -4,6 +4,11 @@ include_once('helpers/Database.php');
 include_once ('controllers/PokemonController.php');
 
 include_once ('models/PokemonModel.php');
+
+include_once ('helpers/MustachePresenter.php');
+include_once ('helpers/Presenter.php');
+include_once('vendor/mustache/src/Mustache/Autoloader.php');
+
 class Configuration
 {
 
@@ -21,11 +26,16 @@ class Configuration
 
     public static function getPokemonController()
     {
-        return new PokemonController(self::getPokemonModel());
+        return new PokemonController(self::getPokemonModel(), self::getPresenter());
     }
 
     private static function getPokemonModel()
     {
         return new PokemonModel(self::getDatabase());
+    }
+
+    private static function getPresenter()
+    {
+        return new MustachePresenter("");
     }
 }
